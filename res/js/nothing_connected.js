@@ -208,7 +208,7 @@ function processSerial(serial) {
         if (year === "22" || year === "23") {
             //Ear (stick)
             SKU = "14";
-        } else if (year === "24") {
+        } else if (year === "24" || year === "25") {
             //Ear (open) TODO: Find a better way to identify both
             SKU = "11200005";
         }
@@ -220,6 +220,9 @@ function processSerial(serial) {
     else if (headSerial === "13") {
         //document.getElementById("device_container").innerHTML = '<div class="device-info"><p>Device Found</p><p>Serial Number: ' + serial + '</p></div>';
         SKU = serial.substring(4, 6);
+    }
+    else if (headSerial === "CI") {
+        SKU = "65";
     }
     else {
         //document.getElementById("device_container").innerHTML = '<div class="device-info"><p>Incompatible Device</p><p>Serial Number: ' + serial + '</p></div>';
