@@ -1,0 +1,993 @@
+[
+  {
+    "id": "B181",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "maxFirmware": "*.*.1.74",
+        "eq": 15,
+        "lowLagMode": 0,
+        "findDevice": 1,
+        "googleAssistant": 0,
+        "utcTime": 0,
+        "serialNumber": 0,
+        "earInWarehouse": 0,
+        "dualConnection": 0,
+        "ancLevel": 53,
+        "otaProtocol": 1,
+        "defaultControl": "0602010202030102020201030b0301030b0201070a0301070a",
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30,
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B181",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "Tap_Double",
+            "descKey": ["control_double_tap","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_forward"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          },
+          {
+            "gestureType": 7,
+            "lottieFile": "Tap_Volume_Slider",
+            "descKey": ["control_slide_on_system","control_volume_control"]
+          }
+        ]
+      },
+      {
+        "minFirmware": "*.*.1.75",
+        "maxFirmware": "*.*.1.85",
+        "eq": 15,
+        "findDevice": 1,
+        "googleAssistant": 0,
+        "utcTime": 0,
+        "serialNumber": 0,
+        "earInWarehouse": 0,
+        "dualConnection": 0,
+        "ancLevel": 53,
+        "otaProtocol": 1,
+        "defaultControl": "0602010202030102020201030b0301030b0201070a0301070a",
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30,
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B181",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "Tap_Double",
+            "descKey": ["control_double_tap","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_forward"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          },
+          {
+            "gestureType": 7,
+            "lottieFile": "Tap_Volume_Slider",
+            "descKey": ["control_slide_on_system","control_volume_control"]
+          }]
+      },
+      {
+        "minFirmware": "*.*.1.86",
+        "eq": 15,
+        "findDevice": 1,
+        "utcTime": 0,
+        "serialNumber": 0,
+        "earInWarehouse": 0,
+        "dualConnection": 0,
+        "ancLevel": 53,
+        "otaProtocol": 1,
+        "defaultControl": "0602010202030102020201030b0301030b0201070a0301070a",
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30,
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B181",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "Tap_Double",
+            "descKey": ["control_double_tap","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_forward"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          },
+          {
+            "gestureType": 7,
+            "lottieFile": "Tap_Volume_Slider",
+            "descKey": ["control_slide_on_system","control_volume_control"]
+          }]
+      }
+    ]
+  },
+  {
+    "id": "B157",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "minFirmware": "*.*.2.0",
+        "dualConnection": 0,
+        "ancLevel": 33,
+        "otaProtocol": 1,
+        "advancedEq": 1,
+        "advancedEqTotalGain": -11,
+        "noiseReduction": 1,
+        "defaultControl": "08020102090301020902010308030103080201070a0301070a0201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.66,
+          "freqHigh":3500.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B157",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","control_volume_up","control_volume_down"]
+          }
+        ],
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      },
+      {
+        "maxFirmware": "*.*.1.79",
+        "dualConnection": 0,
+        "ancLevel": 0,
+        "otaProtocol": 1,
+        "noiseReduction": 2,
+        "defaultControl": "080201020903010209020103080301030802010713030107120201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.66,
+          "freqHigh":3500.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B157",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","control_volume_up","control_volume_down"]
+
+          }
+        ],
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      },
+      {
+        "minFirmware": "*.*.1.80",
+        "maxFirmware": "*.*.1.999",
+        "dualConnection": 0,
+        "ancLevel": 0,
+        "advancedEq": 1,
+        "advancedEqTotalGain": -11,
+        "otaProtocol": 1,
+        "noiseReduction": 2,
+        "defaultControl": "080201020903010209020103080301030802010713030107120201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.66,
+          "freqHigh":3500.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B157",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","control_volume_up","control_volume_down"]
+          }
+        ],
+        "supportCTKD": 0,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B155",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "maxFirmware": "*.*.1.94",
+        "advancedEqTotalGain": -6,
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 63,
+        "personalizedAnc": 1,
+        "advancedEq": 0,
+        "earTipFitTest": 1,
+        "otaProtocol": 1,
+        "highQualityAudio": 2,
+        "mimi": 1,
+        "defaultControl": "080201020903010209020103080301030802010716030107160201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "buttonPosition":4,
+        "connectGuideLottie":"connect_guide_B155",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      },
+      {
+        "minFirmware": "*.*.1.95",
+        "advancedEqTotalGain": -6,
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 63,
+        "personalizedAnc": 1,
+        "advancedEq": 1,
+        "earTipFitTest": 1,
+        "otaProtocol": 1,
+        "highQualityAudio": 2,
+        "mimi": 1,
+        "defaultControl": "080201020903010209020103080301030802010716030107160201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "buttonPosition":4,
+        "connectGuideLottie":"connect_guide_B155",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B162",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 63,
+        "earTipFitTest": 1,
+        "otaProtocol": 1,
+        "highQualityAudio": 4,
+        "ultraBass": 1,
+        "defaultControl": "080201020903010209020103080301030802010716030107160201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "connectGuideLottie":"connect_guide_B162",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30,
+        "buttonPosition": 1
+      }
+    ]
+  },
+  {
+    "id": "B171",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "advancedEqTotalGain": -6,
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 63,
+        "advancedEq": 1,
+        "earTipFitTest": 1,
+        "otaProtocol": 1,
+        "highQualityAudio": 7,
+        "mimi": 1,
+        "ultraBass": 1,
+        "defaultControl": "080201020903010209020103080301030802010716030107160201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "connectGuideLottie":"connect_guide_B171",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30,
+        "buttonPosition": 4
+      }
+    ]
+  },
+  {
+    "id": "B163",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 0,
+        "dualConnectionReboot": 0,
+        "ancLevel": 55,
+        "otaProtocol": 1,
+        "defaultControl": "080201020902010308020107160201090103010209030103080301071603010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 2,
+        "connectGuideLottie":"connect_guide_B163",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double_B163",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple_B163",
+            "descKey": ["control_triple_tap","control_skip_back","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long_B163",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B164",
+    "brand": 0,
+    "style": 1,
+    "single": 1,
+    "configs": [
+      {
+        "earDetection": 0,
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 63,
+        "otaProtocol": 1,
+        "ultraBass": 1,
+        "deviceType": 6,
+        "spatialAudio": 6,
+        "defaultControl": "03060102090601030806010716",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 3,
+        "connectGuideLottie":"connect_guide_B164",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Neckband_SingleTap",
+            "descKey": ["single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Neckband_DoubleTap",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Neckband_TripleTap",
+            "descKey": ["triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Neckband_LongTap",
+            "descKey": ["press_hold","anc_noise_control"]
+          },
+          {
+            "gestureType": 6,
+            "lottieFile": "Neckband_Rotate",
+            "descKey": ["rotate","control_volume_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 0,
+        "otaBattery": 20
+      }
+    ]
+  },
+  {
+    "id": "B168",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 49,
+        "otaProtocol": 1,
+        "ultraBass": 1,
+        "eq": 0,
+        "diracOpteoSupport": 1,
+        "diracOpteo": 253,
+        "defaultControl": "080201020902010308020107160201090103010209030103080301071603010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 4,
+        "connectGuideLottie":"connect_guide_B168",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_back","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B172",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 63,
+        "otaProtocol": 1,
+        "highQualityAudio": 4,
+        "ultraBass": 1,
+        "eq": 0,
+        "spatialAudio": 6,
+        "smartKnob":1,
+        "diracOpteoSupport": 1,
+        "earTipFitTest": 1,
+        "diracOpteo": 254,
+        "diracOpteoAlias": 1,
+        "defaultControl": "0f03010209030103080301071603010901020102090201030802010716020109010401010104010201040103010401070104010a010409020104090301",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 1,
+        "connectGuideLottie":"connect_guide_B172",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double_B172",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple_B172",
+            "descKey": ["control_triple_tap","control_skip_back","control_hand_up_decline_incoming_calls"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long_B172",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B174",
+    "brand": 1,
+    "style": 2,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "otaProtocol": 1,
+        "earDetection": 0,
+        "ultraBass": 0,
+        "buttonPosition": 2,
+        "defaultControl": "080201020903010209020103080301030802010713030107120201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":0.7
+        },
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30,
+        "connectGuideLottie":"connect_guide_B174",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Open_SinglePinch",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Open_DoublePinch",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Open_TriplePinch",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Open_LongPinch",
+            "descKey": ["control_press_hold","control_volume_up","control_volume_down"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "B185",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "buttonPosition": 4,
+        "earDetection": 0,
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 49,
+        "otaProtocol": 1,
+        "ultraBass": 1,
+        "eq": 0,
+        "diracOpteoSupport": 2,
+        "diracOpteo": 253,
+        "defaultControl": "080201020902010308020107160201090103010209030103080301071603010901",
+        "connectGuideLottie":"connect_guide_B185",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_back","control_hand_up_decline_incoming_calls"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B179",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "buttonPosition": 1,
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 63,
+        "otaProtocol": 2,
+        "ultraBass": 1,
+        "earTipFitTest":1,
+        "diracOpteoSupport": 1,
+        "diracOpteoAlias": 1,
+        "diracOpteo": 252,
+        "spatialAudio": 6,
+        "defaultControl": "080301020903010308030107160301090102010209020103080201071602010901",
+        "connectGuideLottie":"connect_guide_B179",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_back","control_hand_up_decline_incoming_calls"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B184",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "buttonPosition": 1,
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 63,
+        "otaProtocol": 2,
+        "ultraBass": 1,
+        "earTipFitTest":1,
+        "highQualityAudio":4,
+        "diracOpteo": 253,
+        "diracOpteoSupport": 2,
+        "spatialAudio": 6,
+        "audiodo": 1,
+        "defaultControl": "080301020903010308030107160301090102010209020103080201071602010901",
+        "connectGuideLottie":"connect_guide_B184",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple",
+            "descKey": ["control_triple_tap","control_skip_back","control_hand_up_decline_incoming_calls"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B183",
+    "supportId": "B162",
+    "brand": 1,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 0,
+        "ancLevel": 63,
+        "earTipFitTest": 1,
+        "otaProtocol": 1,
+        "highQualityAudio": 4,
+        "ultraBass": 1,
+        "buttonPosition": 1,
+        "defaultControl": "080201020903010209020103080301030802010716030107160201090103010901",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":3400.0,
+          "qHigh":1.0
+        },
+        "connectGuideLottie":"connect_guide_B183",
+        "guideInfos": [
+          {
+            "gestureType": 1,
+            "lottieFile": "Pinch_Single",
+            "descKey": ["control_single_press","control_play_pause","control_answer_hang_up"]
+          },
+          {
+            "gestureType": 2,
+            "lottieFile": "Pinch_Double",
+            "descKey": ["control_double_press","control_skip_forward","control_decline_incoming_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "Pinch_Triple",
+            "descKey": ["control_triple_press","control_skip_back"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "Pinch_Long",
+            "descKey": ["control_press_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  },
+  {
+    "id": "B187",
+    "supportId": "B172",
+    "brand": 0,
+    "style": 0,
+    "configs": [
+      {
+        "dualConnection": 1,
+        "dualConnectionReboot": 1,
+        "ancLevel": 63,
+        "otaProtocol": 1,
+        "highQualityAudio": 4,
+        "ultraBass": 1,
+        "eq": 0,
+        "spatialAudio": 6,
+        "smartKnob":1,
+        "diracOpteoSupport": 2,
+        "earTipFitTest": 1,
+        "diracOpteo": 254,
+        "diracOpteoAlias": 1,
+        "defaultControl": "0f03010209030103080301071603010901020102090201030802010716020109010401010104010201040103010401070104010a010409020104090301",
+        "customEQ":{
+          "freqLow":140.0,
+          "qLow":0.8,
+          "freqPeak":980.0,
+          "qPeak":0.7,
+          "freqHigh":6900.0,
+          "qHigh":1.0
+        },
+        "buttonPosition": 0,
+        "connectGuideLottie":"connect_guide_B172",
+        "guideInfos": [
+          {
+            "gestureType": 2,
+            "lottieFile": "CMF_Tap_Double_B172",
+            "descKey": ["control_double_tap","control_skip_forward","control_answer_call"]
+          },
+          {
+            "gestureType": 3,
+            "lottieFile": "CMF_Tap_Triple_B172",
+            "descKey": ["control_triple_tap","control_skip_back","control_hand_up_decline_incoming_calls"]
+          },
+          {
+            "gestureType": 4,
+            "lottieFile": "CMF_Tap_Long_B172",
+            "descKey": ["control_tap_hold","anc_noise_control"]
+          }
+        ],
+        "supportCTKD": 1,
+        "isUseGattOverBREDR": 1,
+        "otaBattery": 30
+      }
+    ]
+  }
+]

@@ -1,15 +1,35 @@
-var SPPsocket = null;
-var modelBase = "";
+let SPPsocket = null;
+let writeQueue = Promise.resolve();
+
+
+
+let modelSpecs = {};
+let modelBase = "";
+
+let firmwareVersion = "";
+let firmwareConfig = {};
 
 let operationID = 0;
 let operationList = {};
-let firmwareVersion = "";
 
-var debug = false;
+
+let debug = true;
 if (!debug) {
     console.log = function () { };
 }
-function send(command, payload = [], operation = "") {
+
+
+
+async function sendString(command, payload = "", operation = "") {
+    // payload will be a string representing a hex string
+    let payloadBytes = [];
+    if (payload !== "") {
+        payloadBytes = payload.match(/.{1,2}/g).map(byte => parseInt(byte, 16));
+    }
+    await send(command, payloadBytes, operation);
+}
+
+async function send(command, payload = [], operation = "") {
     let header = [0x55, 0x60, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00];
     operationID++;
     header[7] = operationID;
@@ -26,11 +46,20 @@ function send(command, payload = [], operation = "") {
         operationList[operationID] = operation;
     }
     console.log("sending " + byteArray.map(byte => byte.toString(16).padStart(2, '0')).join(''));
-    var tempSock = SPPsocket.writable.getWriter();
-    byteArray = new Uint8Array(byteArray).buffer;
-
-    tempSock.write(byteArray);
-    tempSock.releaseLock();
+    writeQueue = writeQueue.then(async () => {
+        let writer = null;
+        try {
+            writer = SPPsocket.writable.getWriter();
+            console.log("Writing to SPPsocket: " + byteArray.map(byte => byte.toString(16).padStart(2, '0')).join(''));
+            await writer.write(new Uint8Array(byteArray));
+        } catch (error) {
+            console.error('Write failed:', error);
+        } finally {
+            if (writer) {
+                writer.releaseLock();
+            }
+        }
+    });
 }
 
 function crc16(buffer) {
@@ -71,9 +100,9 @@ async function initDevice() {
 
 
 function setModelBase() {
-    modelBase = localStorage.getItem("model");
+    modelSpecs = localStorage.getItem("model");
     //modelBase is a json string, so we need to parse it
-    modelBase = JSON.parse(modelBase);
+    modelBase = JSON.parse(modelSpecs);
     modelBase = modelBase.base;
 }
 
@@ -390,27 +419,87 @@ function formatFloatForEQ(f, total) {
     return array;
 }
 
-function setCustomEQ_BT(level) {
-    if (modelBase !== "B181") {
-        var byteArray = [0x03, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x75, 0x44, 0xc3, 0xf5, 0x28, 0x3f, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0xc0, 0x5a, 0x45, 0x00, 0x00, 0x80, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x43, 0xcd, 0xcc, 0x4c, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
+function floatToReversedBytes(value) {
+    const buffer = new ArrayBuffer(4);
+    const view = new DataView(buffer);
+    view.setFloat32(0, value, false); // big-endian
+    
+    // Reverse the byte order
+    const bytes = new Uint8Array(buffer);
+    return new Uint8Array([bytes[3], bytes[2], bytes[1], bytes[0]]);
+}
 
-        var highestValue = 0;
-        for (var i = 0; i < 3; i++) {
-            if (level[i] > highestValue) {
-                highestValue = level[i];
-            }
-        }
-        highestValue = highestValue / -1;
-        var array = formatFloatForEQ(highestValue, true);
-        for (var j = 0; j < 4; j++) {
-            byteArray[1 + j] = array[j];
-        }
-        for (var i = 0; i < 3; i++) {
-            array = formatFloatForEQ(level[i], false);
-            for (var j = 0; j < 4; j++) {
-                byteArray[6 + (i * 13) + j] = array[j];
-            }
-        }
+function createEQPacket(eqBands) {
+    if (!eqBands || eqBands.length === 0) {
+        throw new Error("At least one EQ band is required");
+    }
+    
+    if (eqBands.length > 255) {
+        throw new Error("Too many EQ bands (max 255)");
+    }
+
+    const maxGain = Math.max(...eqBands.map(band => band.gain));
+    const totalGain = -maxGain;
+    
+    const packetSize = 1 + 4 + (eqBands.length * 16);
+    const packet = new Uint8Array(packetSize);
+    let offset = 0;
+    
+    packet[offset++] = eqBands.length;
+    
+    packet.set(floatToReversedBytes(totalGain), offset);
+    offset += 4;
+    
+    for (const band of eqBands) {
+        // Filter type (1 byte)
+        packet[offset++] = band.filterType;
+        
+        packet.set(floatToReversedBytes(band.gain), offset);
+        offset += 4;
+        
+        packet.set(floatToReversedBytes(band.frequency), offset);
+        offset += 4;
+        
+        packet.set(floatToReversedBytes(band.quality), offset);
+        offset += 4;
+    }
+
+    for (let i = 0; i < eqBands.length; i++) {
+        packet[offset++] = 0x00; 
+        packet[offset++] = 0x00;
+        packet[offset++] = 0x00;
+    }
+    //print all details of the band
+    console.log("EQ Packet Details:");
+    console.log("Number of Bands: " + eqBands.length);
+    console.log("Total Gain: " + totalGain);
+    for (let i = 0; i < eqBands.length; i++) {
+        console.log(`Band ${i + 1}:`);
+        console.log("  Filter Type: " + eqBands[i].filterType);
+        console.log("  Gain: " + eqBands[i].gain);
+        console.log("  Frequency: " + eqBands[i].frequency);
+        console.log("  Quality: " + eqBands[i].quality);
+    }
+
+
+    console.log("EQ Packet: " + Array.from(packet, byte => byte.toString(16).padStart(2, '0')).join(''));
+    return packet;
+}
+
+function setCustomEQ_BT(level) {
+    if (modelBase !== "B181" && modelSpecs.customEQ) {
+        let customEQ = modelSpecs.customEQ;
+
+        const LOW_SHELF = 0;
+        const PEAK = 1;
+        const HIGH_SHELF = 2;
+    
+        const eqBands = [
+            {filterType: PEAK, gain: level[0], frequency: customEQ.freqPeak, quality: customEQ.qPeak},
+            {filterType: HIGH_SHELF, gain: level[1], frequency: customEQ.freqHigh, quality: customEQ.qHigh},
+            {filterType: LOW_SHELF, gain: level[2], frequency: customEQ.freqLow, quality: customEQ.qLow}
+        ];
+        const byteArray = createEQPacket(eqBands);
         send(61505, byteArray, "setCustomEQ");
     }
 }
@@ -539,7 +628,100 @@ function readFirmware(hexstring) {
         firmwareVersion += String.fromCharCode(hexArray[8 + i]);
     }
     setFirmwareText(firmwareVersion);
+    getConfigForFirmware();
 }
+
+async function getConfigForFirmware() {
+    // Input validation
+    if (!modelBase?.trim() || !firmwareVersion?.trim()) {
+        console.error("Model base or firmware version is not set. Cannot get config.");
+        return false;
+    }
+    
+    console.log(`Getting config for model: ${modelBase}, firmware: ${firmwareVersion}`);
+    
+    try {
+        // Load configuration data
+        const response = await fetch("/js/ear_config_file.json");
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const jsonData = await response.json();
+        
+        if (!Array.isArray(jsonData)) {
+            throw new Error("Invalid config format: expected array");
+        }
+        
+        console.log("Config data loaded successfully");
+        firmwareConfig = jsonData;
+        
+        // Find matching model configuration
+        modelSpecs = firmwareConfig.find(config => config.id === modelBase);
+        
+        if (!modelSpecs) {
+            console.warn(`No configuration found for model: ${modelBase}`);
+            return false;
+        }
+        
+        console.log(`Found config for modelBase: ${modelBase}`);
+        console.log(modelSpecs);
+        
+        // Handle configuration selection
+        const configs = modelSpecs.configs;
+        
+        if (!Array.isArray(configs) || configs.length === 0) {
+            console.warn("No configs array found in model configuration");
+            return false;
+        }
+        
+        // If only one config, use it directly
+        if (configs.length === 1) {
+            console.log("Single config found, using default configuration");
+            modelSpecs = configs[0];
+            console.log(modelSpecs);
+            return true;
+        }
+        
+        // Find config matching firmware version
+        let configFound = false;
+        
+        for (const config of configs) {
+            
+            try {
+                const isCompatible = VersionUtils.isInVersion(
+                    firmwareVersion, 
+                    config.minFirmware, 
+                    config.maxFirmware
+                );
+                
+                if (isCompatible) {
+                    console.log(`Found compatible config for firmware version: ${firmwareVersion}`);
+                    modelSpecs = config;
+                    console.log(modelSpecs);
+                    configFound = true;
+                    break;
+                }
+            } catch (versionError) {
+                console.error("Error checking version compatibility:", versionError);
+            }
+        }
+        
+        if (!configFound) {
+            console.warn(`No compatible firmware config found for version: ${firmwareVersion}`);
+            return false;
+        }
+        
+        console.log("Configuration loaded successfully");
+        return true;
+        
+    } catch (error) {
+        console.error("Failed to get config for firmware:", error);
+        return false;
+    }
+}
+
 
 function launchEarFitTest() {
     if (modelBase === "B155" || modelBase === "B171" || modelBase === "B172" || modelBase === "B162") {
