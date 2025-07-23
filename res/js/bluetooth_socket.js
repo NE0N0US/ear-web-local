@@ -233,7 +233,7 @@ function readBattery(hexString) {
     let batteryCase = batteryStatus["case"]["batteryLevel"];
     let batteryStereo = batteryStatus["stereo"]["batteryLevel"];
     console.log(batteryLeft);
-    if (batteryStereo !== "DISCONNECTED") {
+    if (batteryStatus["stereo"] !== "DISCONNECTED") {
         setBattery("s", batteryStereo)
     }
     else {
