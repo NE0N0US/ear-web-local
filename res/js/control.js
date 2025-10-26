@@ -353,6 +353,33 @@ function getModelFromSKU(SKU, altList = false) {
             duoImg: "",
             isANC: true
         },
+        "hoothoot_black": {
+            name: "CMF Buds 2a",
+            base: "B185",
+            leftImg: "../assets/b185_black_left.webp",
+            caseImg: "../assets/b185_black_case.webp",
+            rightImg: "../assets/b185_black_right.webp",
+            duoImg: "",
+            isANC: true
+        },
+        "hoothoot_white": {
+            name: "CMF Buds 2a",
+            base: "B185",
+            leftImg: "../assets/b185_white_left.webp",
+            caseImg: "../assets/b185_white_case.webp",
+            rightImg: "../assets/b185_white_right.webp",
+            duoImg: "",
+            isANC: true
+        },
+        "hoothoot_orange": {
+            name: "CMF Buds 2a",
+            base: "B185",
+            leftImg: "../assets/b185_orange_left.webp",
+            caseImg: "../assets/b185_orange_case.webp",
+            rightImg: "../assets/b185_orange_right.webp",
+            duoImg: "",
+            isANC: true
+        },
         "elekid_black": {
             name: "Nothing Headphone (1)",
             base: "B170",
@@ -394,7 +421,14 @@ function getModelFromSKU(SKU, altList = false) {
             "01": "girafarig_green",
             "02": "gligar_blue",
             "03": "gligar_blue",
+            "04": "gligar_white",
             "05": "gligar_white",
+            "06": "hoothoot_black",
+            "07": "hoothoot_black",
+            "08": "hoothoot_white",
+            "09": "hoothoot_white",
+            "10": "hoothoot_orange",
+            "11": "hoothoot_orange",
         };
     }
     model = sku_to_model[SKU];

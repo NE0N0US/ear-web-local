@@ -377,13 +377,13 @@ function set_enhanced_bass(enabled, level) {
 }
 
 function get_enhanced_bass() {
-    if (modelBase === "B171" || modelBase === "B172" || modelBase === "B168" || modelBase === "B162" || modelBase === "B184" || modelBase === "B179" || modelBase === "B170") {
+    if (modelBase === "B171" || modelBase === "B172" || modelBase === "B168" || modelBase === "B162" || modelBase === "B184" || modelBase === "B179" || modelBase === "B170" || modelBase === "B185") {
         send(49230, [], "readEnhancedBass");
     }
 }
 
 function read_enhanced_bass(hexString) {
-    if (modelBase === "B171" || modelBase === "B172" || modelBase === "B168" || modelBase === "B162" || modelBase === "B184" || modelBase === "B179" || modelBase === "B170") {
+    if (modelBase === "B171" || modelBase === "B172" || modelBase === "B168" || modelBase === "B162" || modelBase === "B184" || modelBase === "B179" || modelBase === "B170" || modelBase === "B185") {
         let hexArray = hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16));
         let enabled = hexArray[8];
         let level = hexArray[9];
@@ -757,7 +757,7 @@ function readEarFitTestResult(hexstring) {
 } 
 
 function sendInEarRead() {
-    if (modelBase !== "B174") {
+    if (modelBase !== "B174" && modelBase !== "B185") {
         send(49166, [], "readInEar");
     }
 }
@@ -827,7 +827,6 @@ function setPersonalizedANC(enabled) {
 function sendUTCtime() {
     var date = new Date();
     var secEpoch = Math.floor(date.getTime() / 1000);
-    //long to 4 bytes
     var byteArray = new Uint8Array(4);
     byteArray[0] = (secEpoch >> 24) & 0xFF;
     byteArray[1] = (secEpoch >> 16) & 0xFF;

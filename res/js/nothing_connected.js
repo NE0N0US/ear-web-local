@@ -32,6 +32,8 @@ async function switchViewFromModelID(model, sku) {
         window.location.href = "MainControl_gligar";
     } else if (model.base == "B179") {
         window.location.href = "MainControl_girafarig";
+    } else if (model.base == "B185") {
+        window.location.href = "MainControl_hoothoot";
     } else if (model.base == "B170") {
         window.location.href = "MainControl_elekid";
     } else {
@@ -216,7 +218,6 @@ function processSerial(serial) {
             //Ear (stick)
             SKU = "14";
         } else if (year === "24" || year === "25") {
-            //Ear (open) TODO: Find a better way to identify both
             SKU = "11200005";
         }
     }
@@ -227,6 +228,9 @@ function processSerial(serial) {
     else if (headSerial === "SH") {
         //document.getElementById("device_container").innerHTML = '<div class="device-info"><p>Device Found</p><p>Serial Number: ' + serial + '</p></div>';
         SKU = serial.substring(4, 6);
+        if (year === "25") {
+            isAltList = true;
+        }
     }
     else if (headSerial === "13") {
         //document.getElementById("device_container").innerHTML = '<div class="device-info"><p>Device Found</p><p>Serial Number: ' + serial + '</p></div>';
