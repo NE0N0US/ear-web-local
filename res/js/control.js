@@ -400,7 +400,7 @@ function getModelFromSKU(SKU, altList = false) {
         }
     };
     if (altList) {
-        sku_to_model = {
+        sku_to_model_new = {
             "76": "espeon_black",
             "77": "espeon_white",
             "78": "espeon_orange",
@@ -432,6 +432,12 @@ function getModelFromSKU(SKU, altList = false) {
         };
     }
     model = sku_to_model[SKU];
+    if (altList) {
+        model = sku_to_model_new[SKU];
+        if (!model) {
+            model = sku_to_model[SKU];
+        }
+    }
     return models[model];
 }
 
