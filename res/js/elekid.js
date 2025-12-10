@@ -265,7 +265,7 @@ function changeGesture(type) {
         //displayPopUp(show_popup)
         document.getElementById("list_container").addEventListener("change", function (e) {
             document.getElementById("settings_subtitle_button_hold").innerHTML = document.getElementById("list_container").value
-            if (current_site == "l") {
+            if (current_side == "l") {
                 button_hold_current = document.getElementById("list_container").value;
                 var index = button_hold.indexOf(document.getElementById("list_container").value);
                 var operation = 0;

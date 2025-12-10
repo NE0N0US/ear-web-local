@@ -1,9 +1,7 @@
 
 function transToLeftGest(side) {
-    current_site = side;
-    if (current_site == "l") {
-
-
+    current_side = side;
+    if (current_side == "l") {
         leftEarBattery.style.opacity = "0"
 
         prod_name.style.opacity = "0"
