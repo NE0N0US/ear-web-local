@@ -102,6 +102,15 @@ function getCommand(header) {
     return commandInt;
 }
 
+function getPayloadLength(header) {
+    let length = header[5];
+    return length;
+}
+
+function getPayload(data, length) {
+    return data.slice(8, 8 + length);
+}
+
 function readFirmwareFromData(hexstring) {
     let firmwareVersion = "";
     let hexArray = new Uint8Array(hexstring.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
@@ -164,14 +173,12 @@ function hexStringToUint8Array(hexString) {
 }
 
 function getSerialNumber(hexPayload) {
-    const payload = hexStringToUint8Array(hexPayload);
-
-    // Decode the payload
-    const E = payload[0]; 
-    const s02 = new TextDecoder().decode(payload.subarray(1, 7)); 
+    const payloadArray = hexStringToUint8Array(hexPayload);
+    const payloadLength = getPayloadLength(payloadArray);
+    const payloadWithoutCRC = getPayload(payloadArray, payloadLength);
     const configurations = [];
 
-    const lines = new TextDecoder().decode(payload.subarray(7)).split('\n');
+    const lines = new TextDecoder().decode(payloadWithoutCRC).split('\n');
 
     lines.forEach(line => {
         const parts = line.split(',');
@@ -179,7 +186,6 @@ function getSerialNumber(hexPayload) {
             const device = parseInt(parts[0], 10);
             const type = parseInt(parts[1], 10);
             const value = parts[2];
-
             if (!isNaN(device) && !isNaN(type) && value) {
                 configurations.push({ device, type, value });
             }
