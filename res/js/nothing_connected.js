@@ -48,7 +48,7 @@ async function loadDevicePage(device) {
 }
 
 async function scanNewDevices() {
-    document.getElementById("device_container").innerHTML = '<img src="../assets/loading.svg" alt="loading_animation" class="h-[80px] w-[80px] m-auto" id="loading_animation" />';
+    document.getElementById("device_container").innerHTML = '<img src="./assets/loading.svg" alt="loading_animation" class="h-[80px] w-[80px] m-auto" id="loading_animation" />';
     document.getElementById("scan_button").style.display = "none";
     const SPP_UUID = "aeac4a03-dff5-498f-843a-34487cf133eb";
     const FASTPAIR_UUID = "df21fe2c-2515-4fdb-8886-f12c4d67927c";

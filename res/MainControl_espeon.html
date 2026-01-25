@@ -8,10 +8,10 @@
     <title>ear (web)</title>
     <link rel="icon" href="icons/16x16.png" />
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@1.1.3/dist/chartjs-plugin-dragdata.min.js"></script>
-    <link href="../global.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/external/Chart.js"></script>
+    <script src="./js/external/chartjs-plugin-dragdata.min.js"></script>
+    <link href="./global.css" rel="stylesheet" />
+    <script src="./js/external/tailwind.js"></script>
 </head>
 
 <body style="width: 800px; height: 710px; position: absolute; background: #21201f; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); ">
@@ -33,7 +33,7 @@
             <section onclick="transBackToLeft('MainControl')"
                      style="z-index: 100; opacity: 0; position: absolute; top: 20px; cursor: pointer;" id="back">
                 <svg width="30" height="30" class="ml-8 mb-5">
-                    <image xlink:href="../assets/back.svg" width="30" height="30" />
+                    <image xlink:href="./assets/back.svg" width="30" height="30" />
                 </svg>
             </section>
             <div id="cont" style="margin-top: 20px;">
@@ -68,11 +68,11 @@
                 <div style="margin: 20px; margin-top: -20px;">
                     <div name="logo" class="w-full" style="margin-bottom: 10px;">
                         <div id="prod_name" style="font-family: Ndot-55-Bold; opacity: 100; padding-top: 30px;"
-                             class="w-full text-center pt-8 text-4xl duration-300 ease-in-out">BUDS 2 PLUS</div>
+                             class="w-full text-center pt-8 text-4xl duration-300 ease-in-out">BUDS PRO 2</div>
                         <div id="image-container"
                              class='justify-center items-center flex relative ease-in-out duration-300'>
                             <div id="left_ear" class='w-52 ease-in-out duration-300'>
-                                <img src="../assets/nothing_connected2.webp"
+                                <img src="./assets/nothing_connected2.webp"
                                      class='h-44 ml-[40px] duration-500 ease-in-out relative cursor-pointer'
                                      onclick="transToLeftGest('l'); loadCurrentGestures('l')" id="left_ear_peace"
                                      style="z-Index:100; margin: 0 0 0 40px; transform: scale(0.85);" />
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <div id="right_ear" class='w-52 w-34 ease-in-out duration-300'>
-                                <img src="../assets/nothing_connected.webp"
+                                <img src="./assets/nothing_connected.webp"
                                      class='h-44 w-34 margin-auto duration-[2s] ease-in-out cursor-pointer'
                                      onclick="transToLeftGest('r'); loadCurrentGestures('r')" id="right_ear_peace" style="margin: auto; transform: scale(0.85);" />
                                 <div id="right_ear_battery" class="ease-in-out duration-300" style="opacity: 100; margin-top: -10px;">
@@ -124,21 +124,21 @@
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(0)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="ANC_on" style="width: 23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_on_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_on_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                             <div id="two"
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(1)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="trans_on" style="width: 23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_transparent_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_transparent_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                             <div id="three"
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(2)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="anc_off" style="width:23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_off_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_off_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                         </div>
@@ -209,7 +209,7 @@
 
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="bass_on" style="width: 23px; stroke: black !important; fill:black !important;">
 
-                                                    <use xlink:href="../assets/ear_bass_enhance_on.svg#load"></use>
+                                                    <use xlink:href="./assets/ear_bass_enhance_on.svg#load"></use>
 
                                                 </svg>
 
@@ -221,7 +221,7 @@
 
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="bass_off" style="width: 23px; fill: white !important;">
 
-                                                    <use xlink:href="../assets/ear_bass_enhance_off.svg#load"></use>
+                                                    <use xlink:href="./assets/ear_bass_enhance_off.svg#load"></use>
 
                                                 </svg>
 
@@ -339,7 +339,7 @@
                                             <div class="grid grid-cols-2 grid-rows-1" style="margin-top: 10px; margin-bottom: -10px; margin-left: -10px; cursor: pointer;" onclick="showEarTipTestDialog()">
                                                 <div id="settinjgs-switch-label" class="settings-switch-label" style="margin-top: 3px;">Ear tip test</div>
                                                 <div id="arrow-icon">
-                                                    <img src="../assets/arrow_right.svg" alt="arrow-right" style="width: 20px; height: 20px; float: right;">
+                                                    <img src="./assets/arrow_right.svg" alt="arrow-right" style="width: 20px; height: 20px; float: right;">
                                                 </div>
                                             </div>
                                             <div id="seperator" class="">
@@ -356,7 +356,7 @@
                                             </div>
                                             <div class="rounded-xl pt-5 pb-5 mt-1 grid grid-cols-2 grid-rows-1 -ml-16" id="case_ear">
                                                 <div id="setting_title" class=" text-sm ml-5 text-gray-200">
-                                                    <img id="case-img" src="../assets/ear_one_white_case.webp" class='mr-2 h-20 -mt-5 -mb-5 float-right' />
+                                                    <img id="case-img" src="./assets/ear_one_white_case.webp" class='mr-2 h-20 -mt-5 -mb-5 float-right' />
                                                 </div>
                                                 <div id="settings_subtitle" class="text-sm ml-5 text-white">
                                                     <div id="battery-c" class='text-center'>
@@ -437,10 +437,10 @@
                                 <div class="grid grid-rows-3 grid-cols-2 gap-4">
                                     <button class="eq-button p-2 pl-4 pr-4 bg-black border-none rounded-full mr-3 hover:bg-[#1B1D1F] ease-in-out duration-300 w-full"
                                             onclick="EQButtonPress(0, 0)"
-                                            style="background-color: white; color: black; display:none;">
+                                            style="background-color: white; color: black;">
                                         Dirac OPTEO
                                     </button>
-                                    <button class="eq-button p-2 pl-4 pr-4 bg-black border-none rounded-full hover:bg-[#1B1D1F] ease-in-out duration-300 w-full"
+                                    <button class="eq-button p-2 pl-4 pr-4 bg-black border-none border-[1px] rounded-full hover:bg-[#1B1D1F] ease-in-out duration-300 w-full"
                                             onclick="EQButtonPress(3, 1)">
                                         POP
                                     </button>
@@ -460,11 +460,11 @@
                                             onclick="EQButtonPress(4, 5)">
                                         Enhance vocals
                                     </button>
-                                    <button class="eq-button p-2 pl-4  pr-4 bg-black border-none border-[1px] rounded-full hover:bg-[#1B1D1F] ease-in-out duration-300 w-full"
-                                        onclick="EQButtonPress(6, 6)">
-                                        Custom
-                                    </button>
                                 </div>
+                                <button class="eq-button p-2 pl-4 mt-4 pr-4 bg-black border-none border-[1px] rounded-full hover:bg-[#1B1D1F] ease-in-out duration-300 w-full"
+                                        onclick="EQButtonPress(6, 6)">
+                                    Custom
+                                </button>
 
                             </div>
                         </div>
@@ -477,12 +477,12 @@
             </div>
         </div>
     </div>
-    <script src="../js/transitions.js"></script>
-    <script src="../js/eq_espeon.js"></script>
-    <script type="text/javascript" src="../js/control.js?v=20260101"></script>
-    <script src="../js/espeon.js"></script>
-    <script src="../js/bluetooth_socket.js"></script>
-    <script src="../js/versionUtils.js"></script>
+    <script src="./js/transitions.js"></script>
+    <script src="./js/eq_espeon.js"></script>
+    <script type="text/javascript" src="./js/control.js"></script>
+    <script src="./js/espeon.js"></script>
+    <script src="./js/bluetooth_socket.js"></script>
+    <script src="./js/versionUtils.js"></script>
     <script type="text/javascript">
         window.addEventListener('load', () => {
             updateBudsInfo();

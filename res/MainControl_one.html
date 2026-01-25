@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script src="../js/one.js"></script>
+<script src="./js/one.js"></script>
 <html lang="en">
 
 <head>
@@ -9,8 +9,8 @@
     <title>ear (web)</title>
     <link rel="icon" href="icons/16x16.png" />
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <link href="../global.css" rel="stylesheet" />
+    <script src="./js/external/Chart.js"></script>
+    <link href="./global.css" rel="stylesheet" />
 </head>
 
 <body style="width: 800px; height: 710px; position: absolute; background: #21201f; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); ">
@@ -32,7 +32,7 @@
             <section onclick="transBackToLeft('MainControl')"
                      style="z-index: 100; opacity: 0; position: absolute; top: 20px; cursor: pointer;" id="back">
                 <svg width="30" height="30" class="ml-8 mb-5">
-                    <image xlink:href="../assets/back.svg" width="30" height="30" />
+                    <image xlink:href="./assets/back.svg" width="30" height="30" />
                 </svg>
             </section>
             <div id="cont" class="mt-5">
@@ -71,7 +71,7 @@
                         <div id="image-container"
                              class='justify-center items-center flex relative ease-in-out duration-300'>
                             <div id="left_ear" class='w-52 ease-in-out duration-300'>
-                                <img src="../assets/nothing_connected2.webp"
+                                <img src="./assets/nothing_connected2.webp"
                                      class='h-44 ml-[40px] duration-500 ease-in-out relative cursor-pointer'
                                      onclick="transToLeftGest('l'); loadCurrentGestures('l')" id="left_ear_peace"
                                      style="z-Index:100; margin: 0 0 0 40px" />
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div id="right_ear" class='w-52 w-34 ease-in-out duration-300'>
-                                <img src="../assets/nothing_connected.webp"
+                                <img src="./assets/nothing_connected.webp"
                                      class='h-44 w-34 margin-auto duration-[2s] ease-in-out cursor-pointer'
                                      onclick="transToLeftGest('r'); loadCurrentGestures('r')" id="right_ear_peace" style="margin: auto;" />
                                 <div id="right_ear_battery" class="ease-in-out duration-300" style="opacity: 100">
@@ -119,21 +119,21 @@
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(0)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="ANC_on" style="width: 23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_on_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_on_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                             <div id="two"
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(1)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="trans_on" style="width: 23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_transparent_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_transparent_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                             <div id="three"
                                                  class="p-2 text-center w-20 ease-in-out duration-150 z-[10] relative text-white cursor-pointer"
                                                  onclick="setANC(2)">
                                                 <svg class="h-[23px] mt-[1px] ml-[20px] relative" id="anc_off" style="width: 23px; fill: white !important;">
-                                                    <use xlink:href="../assets/anc_off_icon.svg#load"></use>
+                                                    <use xlink:href="./assets/anc_off_icon.svg#load"></use>
                                                 </svg>
                                             </div>
                                         </div>
@@ -247,7 +247,7 @@
                             </div>
                             <div class="rounded-xl pt-5 pb-5 mt-1 grid grid-cols-2 grid-rows-1 -ml-16" id="case_ear">
                                 <div id="setting_title" class=" text-sm ml-5 text-gray-200">
-                                    <img id="case-img" src="../assets/ear_one_white_case.webp" class='mr-2 h-20 -mt-5 -mb-5 float-right' onclick="selectCaseColorPopup()" />
+                                    <img id="case-img" src="./assets/ear_one_white_case.webp" class='mr-2 h-20 -mt-5 -mb-5 float-right' onclick="selectCaseColorPopup()" />
                                 </div>
                                 <div id="settings_subtitle" class="text-sm ml-5 text-white">
                                     <div id="battery-c" class='text-center'>
@@ -297,12 +297,12 @@
             </div>
         </div>
     </div>
-    <script src="../js/transitions.js"></script>
-    <script src="../js/one.js"></script>
-    <script src="../js/eq_one.js"></script>
-    <script type="text/javascript" src="../js/control.js?v=20260101"></script>
-    <script src="../js/bluetooth_socket.js"></script>
-    <script src="../js/versionUtils.js"></script>
+    <script src="./js/transitions.js"></script>
+    <script src="./js/one.js"></script>
+    <script src="./js/eq_one.js"></script>
+    <script type="text/javascript" src="./js/control.js"></script>
+    <script src="./js/bluetooth_socket.js"></script>
+    <script src="./js/versionUtils.js"></script>
     <script type="text/javascript">
         window.addEventListener('load', () => {
             updateBudsInfo();
